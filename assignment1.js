@@ -10,14 +10,11 @@ let serverResponses = [
 ];
 
 function httpRequest(httpVerb, path) {
-    // Loop through all the paths
     for (let i = 0; i < serverPaths.length; i++) {
-        // If both the verb and path match, return the corresponding response
         if (serverVerbs[i] === httpVerb && serverPaths[i] === path) {
             return `200: ${serverResponses[i]}`;
         }
     }
-    // If no match was found, return a 404 error
     return `404: Unable to process ${httpVerb} request for ${path}`;
 }
 
